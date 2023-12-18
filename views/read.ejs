@@ -1,6 +1,11 @@
 <%- include ("partials/header.ejs") %>
-    <div class = "flex justify-center mt-7 mb-4">
-        <h1 class="text-3xl text-black-500 font-bold">Today I feel happy.</h1>
-    </div>
-
+    <button onclick="window.location.href='/'" class = "mt-4 ml-4 bg-blue-400 text-white font-bold py-2 px-4 rounded h-10">Again</button>
+    <% if (locals.feeling) { %> 
+        <div class = "mt-7 mb-4">
+            <h1 class=" flex justify-center block text-3xl text-black-500 font-bold">Today I feel <%= feeling %>.</h1>
+            <p class="mx-auto w-1000 pl-8 pr-5 block mt-5 text-center text-orange-500 font-medium"><%=describe %></p>
+        </div>
+    <% } else {%>
+        <h1 class=" flex justify-center block text-3xl text-black-500 font-bold">No content.</h1>
+    <% } %>
 <%- include ("partials/footer.ejs") %>
